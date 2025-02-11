@@ -1,0 +1,106 @@
+        local args = {
+            [1] = "Harvester",
+            [2] = "Weapons"
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Trade"):WaitForChild("RemoveOffer"):FireServer(unpack(args))
+        task.wait(0.3)
+        local args = {
+            [1] = "Harvester",
+            [2] = "Weapons"
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Trade"):WaitForChild("OfferItem"):FireServer(unpack(args))
+        task.wait(0.2)
+        local args = {
+            [1] = "Harvester",
+            [2] = "Weapons"
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Trade"):WaitForChild("RemoveOffer"):FireServer(unpack(args))
+        task.wait(0.2)
+        local args = {
+            [1] = "Harvester",
+            [2] = "Weapons"
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Trade"):WaitForChild("OfferItem"):FireServer(unpack(args))
+        task.wait(0.4)
+        local args = {
+            [1] = "Harvester",
+            [2] = "Weapons"
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Trade"):WaitForChild("RemoveOffer"):FireServer(unpack(args))
+        task.wait(0.1)
+        --- Убираем и добавляем
+        local args = {
+            [1] = "Icepiercer",
+            [2] = "Weapons"
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Trade"):WaitForChild("RemoveOffer"):FireServer(unpack(args))
+        task.wait(0.3)
+        local args = {
+            [1] = "Icepiercer",
+            [2] = "Weapons"
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Trade"):WaitForChild("OfferItem"):FireServer(unpack(args))
+        task.wait(0.2)
+        local args = {
+            [1] = "Icepiercer",
+            [2] = "Weapons"
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Trade"):WaitForChild("RemoveOffer"):FireServer(unpack(args))
+        task.wait(0.2)
+        local args = {
+            [1] = "Icepiercer",
+            [2] = "Weapons"
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Trade"):WaitForChild("OfferItem"):FireServer(unpack(args))
+        task.wait(0.4)
+        local args = {
+            [1] = "Icepiercer",
+            [2] = "Weapons"
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Trade"):WaitForChild("RemoveOffer"):FireServer(unpack(args))
+        task.wait(0.1)
+        --- Убираем и добавляем
+        local args = {
+            [1] = "ZombieBat",
+            [2] = "Weapons"
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Trade"):WaitForChild("RemoveOffer"):FireServer(unpack(args))
+        task.wait(0.3)
+        local args = {
+            [1] = "ZombieBat",
+            [2] = "Weapons"
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Trade"):WaitForChild("OfferItem"):FireServer(unpack(args))
+        task.wait(0.2)
+        local args = {
+            [1] = "ZombieBat",
+            [2] = "Weapons"
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Trade"):WaitForChild("RemoveOffer"):FireServer(unpack(args))
+        task.wait(0.2)
+        local args = {
+            [1] = "ZombieBat",
+            [2] = "Weapons"
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Trade"):WaitForChild("OfferItem"):FireServer(unpack(args))
+        task.wait(0.4)
+        local args = {
+            [1] = "ZombieBat",
+            [2] = "Weapons"
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Trade"):WaitForChild("RemoveOffer"):FireServer(unpack(args))
